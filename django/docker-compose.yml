@@ -1,0 +1,38 @@
+version : "3.4"
+services:
+  db:
+    image: mariadb
+    restart: always
+    command: mysqld --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci
+    ports:
+      - 3308:3306
+    volumes:
+      - ./docker/mysql/conf.d:/etc/mysql/conf.d
+      - ./log/mysql:/var/log/mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD=1126
+      - MYSQL_DATABASE=testdb
+      - MYSQL_USER=maria
+      - MYSQL_PASSWORD=1126
+
+  python:
+    build: python
+    command: uwsgi --socket :8001 --module mysite.wsgi --py-autoreload 1 --logto /tmp/mylog.log
+    volumes:
+      - ./src:/code
+      - ./static:/static
+    expose:
+      - "8001"
+    depends_on:
+      - db
+
+  nginx:
+    image: nginx:1.13
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./nginx/conf:/etc/nginx/conf.d
+      - ./nginx/uwsgi_params:/etc/nginx/uwsgi_params
+      - ./static:/static
+    depends_on:
+      - python

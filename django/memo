@@ -1,0 +1,33 @@
+ドッカーのコンテナを作成しバックグラウンドで起動するコマンド
+docker-compose up -d
+
+存在するコンテナのリストを表示する(どっちのコマンドでも問題ない)
+docker-compose ps
+docker ps
+
+
+サービスを停止させる
+docker-compose stop
+
+コンテナの停止、削除、さらにネットワーク、記憶領域を全て削除
+docker-compose down
+docker stop 0b5aad08487b
+
+ドッカーのコンテナをすべて削除するコマンド
+docker rm $(docker ps -aq)
+
+立ち上げたコンテナ(Mysql)に接続するしてログイン
+docker exec -it コンテナ名 bash
+mysql -u ユーザー名 -p
+
+#このコマンドでdocker外でmysqlが起動している事を知りました。
+sudo lsof -i -P | grep "LISTEN"
+
+#これで起動しているmysqlを削除
+sudo kill <killしたいportのPID>
+
+show variables like 'character_set_%';
+
+
+show tables from データベース名;
+SHOW COLUMNS FROM テーブル名 FROM データベース名;
