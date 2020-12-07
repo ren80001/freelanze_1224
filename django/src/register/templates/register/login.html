@@ -1,0 +1,103 @@
+{% extends "register/base.html" %}
+{% block title %}ログインページ{% endblock %}
+{% block content %}
+<div class="container mt-n4">
+    <div class="row">
+        <div class="col-1 col-md-2"></div>
+        <div class="col-10 col-md-8 h-25 text-center">
+            <div class="text-center my-5">
+                <a class="noline" href="{% url 'register:top' %}">Freelanze</a>
+            </div>
+        </div>
+        <div class="col-1 col-md-2"></div><!--  コンテナサイズ調整用からコンテナ -->
+    </div>
+
+    <div class="row">
+        <div class="col-1 col-md-2"></div>
+        <div class="card col-10 col-md-8 h-25">
+            <div class="card-body text-center">
+                <h6 class="card-title mb-0 mt-2">アカウントをお持ちでない方はこちら</h6>
+                <div class="card-body py-2">
+                <a href="{% url 'register:user_create' %}" class="btn btn-danger btn-lg" style="width:300px;">
+                    <div class="button_text_size2">新規会員登録</div>
+                </a>
+                </div>
+            </div>
+        </div>
+        <div class="col-1 col-md-2"></div><!--  コンテナサイズ調整用からコンテナ -->
+    </div>
+
+    <div class="row">
+        <div class="col-1 col-md-2"></div><!--  コンテナサイズ調整用からコンテナ -->
+        <div class="card col-10 col-md-8 h-25">
+            <div class="card-body text-center">
+                <div class="card-body py-2">
+                    <a href="{% url 'social:begin' 'google-oauth2' %}" class="btn btn-outline-info btn-lg" style="width:300px;">
+                        <div class="float-left">
+                            <i class="fab fa-google"></i>
+                        </div>
+                        <div class="button_text_size1">Googleでログイン</div>
+                    </a>
+                </div>
+                <div class="card-body py-2">
+                    <a href="{% url 'social:begin' 'twitter' %}" class="btn btn-info btn-lg" style="width:300px;">
+                        <div class="float-left">
+                            <i class="fab fa-twitter"></i>
+                        </div>
+                        <div class="button_text_size1">Twitterでログイン</div>
+                    </a>
+                </div>
+                <div class="card-body py-2">
+                    <a href="{% url 'social:begin' 'facebook' %}" class="btn btn-primary btn-lg" style="width:300px;">
+                        <div class="float-left">
+                            <i class="fab fa-facebook"></i>
+                        </div>
+                        <div class="button_text_size1">Facebookで登録する</div>
+                    </a>
+                </div>
+                <div class="card-body py-2">
+                    <a href="{% url 'social:begin' 'github' %}" class="btn btn-secondary btn-lg" style="width:300px;">
+                        <div class="float-left">
+                            <i class="fab fa-github"></i>
+                        </div>
+                        <div class="button_text_size1">GitHubでログイン</div>
+                    </a>
+                </div>
+
+                <div class="card-body py-5">
+                    <form action="{% url 'register:login' %}" method="POST">
+                        <div class="input_size1" style="width:300px;">
+                        {{ form.non_field_errors }}
+                        {% for field in form %}
+                            {{ field }}
+                            {{ field.errors }}
+                        <br>
+                        {% endfor %}
+                        </div>
+                        <button type="submit" class="btn btn-danger btn-lg" style="width:300px;">
+                            <div class="button_text_size2">ログイン</div>
+                        </button>
+                        <input type="hidden" name="next" value="{{ next }}" />
+                        {% csrf_token %}
+                    </form>
+                    <div class="pt-3">
+                        <a href="{% url 'register:password_reset' %}">パスワードを忘れた方</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="col-1 col-md-2"></div><!--  コンテナサイズ調整用からコンテナ -->
+    </div>
+
+    <div class="row">
+        <div class="col-1 col-md-2"></div><!--  コンテナサイズ調整用からコンテナ -->
+        <div class="col-10 col-md-8 h-25">
+            <div class="text-center">
+                <h6 class="my-5">登録情報を常に最新のものに更新し、自身を魅力的にPRしましょう。</h6>
+            </div>
+        </div>
+        <div class="col-1 col-md-2"></div><!--  コンテナサイズ調整用からコンテナ -->
+    </div>
+</div>
+{% endblock %}

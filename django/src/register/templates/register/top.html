@@ -1,0 +1,181 @@
+{% extends "register/base.html" %}
+{% block title %}Topページ{% endblock %}
+{% block content %}
+
+<!-- ナビバー -->
+<nav class="navbar navbar-light bg-white fixed-top shadow-sm">
+    <div class="container">
+
+        <div class="row w-100 w-sm-75 mx-auto">
+
+            <div class="col-4 col-sm-4 order-sm-0">
+                <a class="navbar-brand" href="{% url 'register:top' %}">
+                    <img src="https://test-s333.s3-ap-northeast-1.amazonaws.com/media/freelanzeicon.png" width="30" height="30" class="d-inline-block align-top" alt="">
+                    Freelanze
+                </a>
+            </div>
+
+            <div class="col-8 col-sm-8 order-sm-3">
+                <div class="float-right pt-1">
+                    {% if user.is_authenticated %}
+                    <a class="btn btn-outline-primary" id="name11" href="{% url 'register:user_detail' user.pk %}" role="button"><font size="2">マイページ</font></a>
+                    <a class="btn btn-danger" href="{% url 'register:logout' %}" role="button"><font size="2">ログアウト</font></a>
+                    {% else %}
+                    <a class="btn btn-success" href="{% url 'register:Guest_login' %}" role="button"><font size="2">Guest</font></a>
+                    <a class="btn btn-outline-primary" href="{% url 'register:login' %}" role="button"><font size="2">ログイン</font></a>
+                    <a class="btn btn-danger" href="{% url 'register:sign_up' %}" role="button"><font size="2">新規会員登録</font></a>
+                    {% endif %}
+                </div>
+            </div>
+
+            <div class="col-12 col-sm-8 order-sm-1">
+                <form class="form-inline my-0 pt-1" action="/search" method="get" accept-charset="utf-8">
+                    <div class="form-group mb-0 flex-grow-1">
+                        <input id="form" name="q" value="{{ request.GET.q }}" type="text" class="col-12 form-control mr-sm-2" placeholder="キーワードで検索" aria-label="検索...">
+                    </div>
+                    <button type="submit" class="btn btn-outline-info my-0">検索</button>
+                </form>
+            </div>
+
+            <div class="col-5 col-sm-4 order-sm-2"><!--ドロップダウンボタン部分-->
+                <div class="btn-group pt-1">
+                    <button type="button" class="btn btn-outline-dark dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <font size="2">スキルで絞り込む</font>
+                    </button>
+                    <form class="form-inline my-2 my-lg-0" action="/search" method="get" accept-charset="utf-8">
+                        <div class="dropdown-menu">
+                            <button class="dropdown-item" type="submit" value="Webデザイナー" name="skill">Webデザイナー</button>
+                            <button class="dropdown-item" type="submit" value="PG(フロントエンド)" name="skill">PG(フロントエンド)</button>
+                            <button class="dropdown-item" type="submit" value="PG(バックエンド)" name="skill">PG(バックエンド)</button>
+                            <button class="dropdown-item" type="submit" value="デザイナー" name="skill">デザイナー</button>
+                            <button class="dropdown-item" type="submit" value="フォトグラファー" name="skill">フォトグラファー</button>
+                            <button class="dropdown-item" type="submit" value="イラストレーター" name="skill">イラストレーター</button>
+                            <button class="dropdown-item" type="submit" value="ライター" name="skill">ライター</button>
+                            <button class="dropdown-item" type="submit" value="ブロガー" name="skill">ブロガー</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<main><!-- メインコンテンツ -->
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12 mt-sm-n5" style="mx-auto"></div>
+    </div>
+    <div class="row"><!-- top画像 -->
+        <img class="img-fluid" src="https://test-s333.s3-ap-northeast-1.amazonaws.com/media/freelanze-top-image.png" style="padding-top:55px;">
+    </div>
+
+    <div class="row bg-white pt-4">
+        <div class="col-12" style="mx-auto">
+            <h5 class="text-center">＼新着フリーランス一覧／</h5>
+        </div>
+    </div>
+</div>
+<!--表示カード-->
+<div class="container pt-4">
+  <div class="row">
+      {% for product in user_list %}
+      {% if product.area %}
+      <div class="col-6 col-md-4 col-lg-3 mb-2">
+          <a href="{% url 'register:user_profile' pk=product.id %}" class="card noline1" style="width: 100%;">
+              {% if product.top_image %}
+              <img class="card-img-top mt-1" src="{{ product.top_image.url }}">
+              {% else %}
+              <img class="card-img-top mt-1" src="https://test-s333.s3-ap-northeast-1.amazonaws.com/media/unknown_image.png"><!--デフォルトアンノーン画像表示 -->
+              {% endif %}
+              <div class="card-body">
+                  <h6 class="card-skill">{{ product.username}}</h6>
+                  <h6 class="card-skill">{{ product.get_skill_display }}</h6>
+                  <p class="card-text">{{ product.get_request_fee_display }}</p>
+              </div>
+          </a>
+      </div><!--表示カードデザインはここまで-->
+      {% endif %}
+      {% endfor %}
+  </div>
+    <div class="row mx-auto float-right">
+        <!--ページネーション↓-->
+        <nav aria-label="Page navigation">
+            <ul class="pagination justify-content-end">
+                <!-- 前へ の部分 -->
+                {% if page_obj.has_previous %}
+                <li class="page-item">
+                    <a class="page-link" href="?page={{ page_obj.previous_page_number }}">
+                        <span aria-hidden="true">&laquo;</span>
+                    </a>
+                </li>
+                {% endif %}
+                <!-- 数字の部分 -->
+                {% for num in page_obj.paginator.page_range %}
+                {% if page_obj.number == num %}
+                <li class="page-item active"><a class="page-link" href="#!">{{ num }}</a></li>
+                {% else %}
+                <li class="page-item"><a class="page-link" href="?page={{ num }}">{{ num }}</a></li>
+                {% endif %}
+                {% endfor %}
+                <!-- 次へ の部分 -->
+                {% if page_obj.has_next %}
+                <li class="page-item">
+                    <a class="page-link" href="?page={{ page_obj.next_page_number }}">
+                        <span aria-hidden="true">&raquo;</span>
+                    </a>
+                </li>
+                {% endif %}
+            </ul>
+        </nav>
+    </div>
+    <div class="row pt-5">
+        <div class="col-12" style="mx-auto">
+            <h5 class="text-center"></h5>
+        </div>
+    </div>
+</div>
+    <!--サブコンテンツ-->
+<div class="container-fluid">
+    <div class="row pt-4">
+        <div class="col-12" style="mx-auto">
+            <h5 class="text-center">＼人気フリーランス一覧／</h5>
+        </div>
+    </div>
+</div>
+<div class="container pt-4">
+  <div class="row">
+      {% for product in like_list %}
+      {% if product.area %}
+      <div class="col-12 col-sm-12 col-md-6 col-lg-4 mt-2">
+          <a href="{% url 'register:user_profile' pk=product.id %}" class="card noline1" style="width: 100%; height: 500px;">
+              {% if product.top_image %}
+              <img class="card-img-top mt-1" src="{{ product.top_image.url }}">
+              {% else %}
+              <img class="card-img-top mt-1" src="https://test-s333.s3-ap-northeast-1.amazonaws.com/media/unknown_image.png"><!--デフォルトアンノーン画像表示 -->
+              {% endif %}
+              <div class="card-body">
+                  <h5 class="card-skill pd-0">{{ product.like }}いいね！</h5>
+                  <h6 class="card-skill">{{ product.portfolio | slice:":130" }}…</h6>
+                  <h6 class="card-skill">{{ product.username}}</h6>
+                  <h6 class="card-skill pd-0">{{ product.get_skill_display }}</h6>
+                  <p class="card-text pt-0">{{ product.get_request_fee_display }}</p>
+              </div>
+          </a>
+      </div><!--表示カードデザインはここまで-->
+      {% endif %}
+      {% endfor %}
+  </div>
+    <div class="row">
+        <div class="col-1 col-md-2"></div>
+        <div class="col-10 col-md-8 h-25 text-center">
+            <div class="text-center my-5">
+                <a class="noline" href="{% url 'register:top' %}">Freelanze</a>
+            </div>
+        </div>
+        <div class="col-1 col-md-2"></div><!--  コンテナサイズ調整用からコンテナ -->
+    </div>
+</div>
+
+</main>
+{% endblock %}
+

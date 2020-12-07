@@ -1,0 +1,84 @@
+{% extends "register/base.html" %}
+{% block title %}会員登録ページ{% endblock %}
+{% block content %}
+<!-- 会員登録郡 -->
+<div class="container">
+    <div class="row">
+        <div class="col-1 col-md-2"></div>
+        <div class="col-10 col-md-8 h-25">
+            <div class="text-center my-5">
+                <a class="noline" href="{% url 'register:top' %}">Freelanze</a>
+            </div>
+        </div>
+        <div class="col-1 col-md-2"></div><!--  コンテナサイズ調整用からコンテナ -->
+    </div>
+    <div class="row">
+        <div class="col-1 col-md-2"></div>
+        <div class="card col-10 col-md-8 h-25">
+            <div class="card-body text-center">
+                <h3 class="card-title my-3">新規会員登録</h3>
+            </div>
+        </div>
+        <div class="col-1 col-md-2"></div><!--  コンテナサイズ調整用からコンテナ -->
+    </div>
+
+    <div class="row">
+        <div class="col-1 col-md-2"></div><!--  コンテナサイズ調整用からコンテナ -->
+        <div class="card col-10 col-md-8 h-25">
+            <div class="card-body text-center">
+                <div class="card-body py-2">
+                    <a href="{% url 'register:user_create' %}" class="btn btn-danger btn-lg" style="width:300px;">
+                        <div class="float-left">
+                            <i class="far fa-envelope"></i>
+                        </div>
+                        <div class="button_text_size1">メールアドレスで登録する</div>
+                    </a>
+                </div>
+                <div class="card-body py-2">
+                    <a href="{% url 'social:begin' 'google-oauth2' %}" class="btn btn-outline-info btn-lg" style="width:300px;">
+                        <div class="float-left">
+                            <i class="fab fa-google"></i>
+                        </div>
+                        <div class="button_text_size1">Googleで登録する</div>
+                    </a>
+                </div>
+                <div class="card-body py-2">
+                    <a href="{% url 'social:begin' 'twitter' %}" class="btn btn-info btn-lg" style="width:300px;">
+                        <div class="float-left">
+                            <i class="fab fa-twitter"></i>
+                        </div>
+                        <div class="button_text_size1">Twitterで登録する</div>
+                    </a>
+                </div>
+                <div class="card-body py-2">
+                    <a href="{% url 'social:begin' 'facebook' %}" class="btn btn-primary btn-lg" style="width:300px;">
+                        <div class="float-left">
+                            <i class="fab fa-facebook"></i>
+                        </div>
+                        <div class="button_text_size1">Facebookで登録する</div>
+                    </a>
+                </div>
+                <div class="card-body py-2">
+                    <a href="{% url 'social:begin' 'github' %}" class="btn btn-secondary btn-lg" style="width:300px;">
+                        <div class="float-left">
+                            <i class="fab fa-github"></i>
+                        </div>
+                        <div class="button_text_size1">GitHubで登録する</div>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="col-1 col-md-2"></div><!--  コンテナサイズ調整用からコンテナ -->
+    </div>
+
+    <div class="row">
+        <div class="col-1 col-md-2"></div><!--  コンテナサイズ調整用からコンテナ -->
+        <div class="col-10 col-md-8 h-25">
+            <div class="text-center">
+                <h6 class="my-5">登録を行いフリーランスとしての第一歩を踏み出しましょう。</h6>
+            </div>
+        </div>
+        <div class="col-1 col-md-2"></div><!--  コンテナサイズ調整用からコンテナ -->
+    </div>
+</div>
+{% endblock %}

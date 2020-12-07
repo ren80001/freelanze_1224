@@ -1,0 +1,51 @@
+{% extends "register/base.html" %}
+{% block title %}本登録完了ページ{% endblock %}
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-1 col-md-2"></div>
+        <div class="col-10 col-md-8 h-25 text-center">
+            <div class="text-center my-5">
+                <a class="noline" href="{% url 'register:top' %}">Freelanze</a>
+            </div>
+        </div>
+        <div class="col-1 col-md-2"></div><!--  コンテナサイズ調整用からコンテナ -->
+    </div>
+
+    <div class="row">
+        <div class="col-1 col-md-2"></div>
+        <div class="card col-10 col-md-8 h-25">
+            <div class="card-body text-center">
+                <h3 class="card-title mb-0 mt-2">本登録完了</h3>
+            </div>
+        </div>
+        <div class="col-1 col-md-2"></div><!--  コンテナサイズ調整用からコンテナ -->
+    </div>
+
+    <div class="row">
+        <div class="col-1 col-md-2"></div><!--  コンテナサイズ調整用からコンテナ -->
+        <div class="card col-10 col-md-8 h-25">
+            <div class="card-body text-center">
+                <div class="card-body py-2">
+                    本登録が完了いたしました。<br>
+                    ご登録されたメールアドレスとパスワードでログインをしてください。<br>
+                </div>
+                <div class="card-body py-2">
+                    <a class="btn btn-danger btn-lg" href="{% url 'register:login' %}" style="width:300px;">ログイン</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-1 col-md-2"></div><!--  コンテナサイズ調整用からコンテナ -->
+    </div>
+
+    <div class="row">
+        <div class="col-1 col-md-2"></div><!--  コンテナサイズ調整用からコンテナ -->
+        <div class="col-10 col-md-8 h-25">
+            <div class="text-center">
+                <h6 class="my-5">会員登録確認メールから本登録を行い、<br>本サービスをお楽しみ下さい。</h6>
+            </div>
+        </div>
+        <div class="col-1 col-md-2"></div><!--  コンテナサイズ調整用からコンテナ -->
+    </div>
+</div>
+{% endblock %}

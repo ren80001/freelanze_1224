@@ -1,0 +1,94 @@
+{% extends "register/base.html" %}
+{% block title %}マイプロフィール編集ページ{% endblock %}
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-1 col-md-2"></div>
+        <div class="col-10 col-md-8 h-25">
+            <div class="text-center my-5">
+                <a class="noline" href="{% url 'register:top' %}">Freelanze</a>
+            </div>
+        </div>
+        <div class="col-1 col-md-2"></div><!--  コンテナサイズ調整用からコンテナ -->
+    </div>
+
+    <div class="row">
+        <div class="col-1 col-md-2"></div>
+        <div class="card col-10 col-md-8 h-25">
+            <div class="card-body text-center">
+                <h3 class="card-title my-3">マイプロフィール編集</h3>
+            </div>
+        </div>
+        <div class="col-1 col-md-2"></div><!--  コンテナサイズ調整用からコンテナ -->
+    </div>
+
+    <div class="row">
+        <div class="col-1 col-md-2"></div><!--  コンテナサイズ調整用からコンテナ -->
+        <div class="card col-10 col-md-8 h-25">
+            <div class="text-image" style="background: url(https://django-for-s3.s3-ap-northeast-1.amazonaws.com/static/media/background-image.png);">
+                {% if user.top_image %}
+                <img class="detail_top_image my-3" src="{{ user.top_image.url }}">
+                {% else %}
+                <img class="detail_top_image my-3" src="https://test-s333.s3-ap-northeast-1.amazonaws.com/media/unknown_image.png"><!--デフォルトアンノーン画像表示 -->
+                {% endif %}
+            </div>
+            <div class="card-body">
+                <form action="" method="POST" enctype="multipart/form-data">
+                    {{ form.non_field_errors }}
+                    <div class="form-group mt-2">
+                        <label for="{{ form.top_image.label }}" class="pr_label">画像を編集する</label>
+                        <div class="input_size" style="width:300px;">{{ form.top_image }}</div>
+                    </div>
+                    <div class="form-group">
+                        <label for="{{ form.username.label }}" class="pr_label">{{ form.username.label }}</label>
+                        <div class="input_size" style="width:300px;">{{ form.username }}</div>
+                    </div>
+                    <div class="form-group">
+                        <label for="{{ form.skill.label }}">{{ form.skill.label }}</label>
+                        <div class="input_size" style="width:300px;">{{ form.skill }}</div>
+                    </div>
+                    <div class="form-group">
+                        <label for="{{ form.request_fee.label }}">{{ form.request_fee.label }}</label>
+                        <div class="input_size" style="width:300px;">{{ form.request_fee }}</div>
+                    </div>
+                    <div class="form-group">
+                        <label for="{{ form.twitter.label }}">{{ form.twitter.label }}</label>
+                        <div class="input_size" style="width:300px;">{{ form.twitter }}</div>
+                    </div>
+                    <div class="form-group">
+                        <label for="{{ form.instagram.label }}">{{ form.instagram.label }}</label>
+                        <div class="input_size" style="width:300px;">{{ form.instagram }}</div>
+                    </div>
+                    <div class="form-group">
+                        <label for="{{ form.area.label }}">{{ form.area.label }}</label>
+                        <div class="input_size" style="width:300px;">{{ form.area }}</div>
+                    </div>
+                    <div class="form-group">
+                        <label for="{{ form.portfolio.label }}">{{ form.portfolio.label }}</label>
+                        {{ form.portfolio }}
+                    </div>
+                    <div class="form-group">
+                        <label for="{{ form.self_introduction.label }}">{{ form.self_introduction.label }}</label>
+                        {{ form.self_introduction }}
+                    </div>
+                    {% csrf_token %}
+                    <div class="text-center py-4">
+                        <button type="submit" class="btn btn-danger btn-lg" style="width:300px;">編集を確定</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="col-1 col-md-2"></div><!--  コンテナサイズ調整用からコンテナ -->
+    </div>
+
+    <div class="row">
+        <div class="col-1 col-md-2"></div><!--  コンテナサイズ調整用からコンテナ -->
+        <div class="col-10 col-md-8 h-25">
+            <div class="text-center">
+                <h6 class="my-5">プロフィールを充実させて、<br>{{ user.nick_name }}さんを最大限アピールしましょう。</h6>
+            </div>
+        </div>
+        <div class="col-1 col-md-2"></div><!--  コンテナサイズ調整用からコンテナ -->
+    </div>
+</div>
+{% endblock %}
