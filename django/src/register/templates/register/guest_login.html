@@ -28,14 +28,14 @@
         <div class="card col-10 col-md-8 h-25">
             <div class="card-body text-center">
                 <div class="card-body py-5">
-                    <form action="/login/" method="POST">
-                        <div class="input_size1" style="width:300px;">
+                    <form action="/login" method="POST">
+                        <div class="input_size1">
                             <input type="text" name="username" autofocus autocapitalize="none" autocomplete="username" maxlength="254" class="form-control validate[required,custom[email]] text-input" placeholder="ユーザーネーム" required id="id_username" value="ゲストユーザー">
                         <br>
                             <input type="password" onclick="OnButtonClick();" name="password" autocomplete="current-password" class="form-control validate[required,minSize[6]] text-input" placeholder="パスワード" required id="id_password" value="gestgest2020">
                         <br>
                         </div>
-                        <button type="submit" class="btn btn-danger btn-lg" style="width:300px;">
+                        <button type="submit" class="btn btn-danger">
                             <div class="button_text_size2" id="btn1">ログイン</div>
                         </button>
                         <input type="hidden" name="next" value="" />

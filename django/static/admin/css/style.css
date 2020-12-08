@@ -1,0 +1,173 @@
+.card-img-top {/* cardの画像をレスポンシブルにする設定 */
+  width: 100%;
+  height: 200px;
+  object-fit: contain; /* この一行を追加するだけ！ */
+}
+
+.img-fluid {/* topのイメージ画像をレスポンシブルにする設定 */
+  width: 100%;
+  height: 100%;
+  object-fit: contain; /* この一行を追加するだけ！ */
+}
+
+.card {/* カードの長さ */
+  height: 350px;
+}
+
+body{/* 背景色指定 */
+  background-color:#f4f4f4;
+  padding-top: 55px;
+}
+
+.button_text_size1{/* 会員登録ページ内の文字サイズ */
+  font-size: small;
+  padding-top: 7px;
+}
+
+.button_text_size2{/* ログインページの登録、ログインボタンテキスト */
+  text-align: center;
+  line-height: 25px;
+  font-size: small;
+}
+
+
+
+
+.text3{/* 会員情報入力ページ */
+  font-size: 12px;
+}
+
+.help_text1{/* 会員情報入力ページ */
+  font-size: 12px;
+  color: red;
+}
+
+.detail_top_image {/* cardの画像をレスポンシブルにする設定 */
+  width: 100%;
+  height: 200px;
+  object-fit: contain; /* この一行を追加するだけ！ */
+}
+
+.noline:link,
+.noline:visited,
+.noline:hover,
+.noline:active { /* リンクであるfreelanze文字を変化させないコード */
+  text-decoration:none;
+  font-size: 35px;
+  color: black;
+}
+
+.noline1:link,
+.noline1:visited,
+.noline1:hover,
+.noline1:active { /* topページのカードリンクの表示を変えないコード */
+  text-decoration:none;
+  color: black;
+}
+
+.text-image {
+  width: 100%;
+  height: 100%;
+}
+
+.detail_name {
+  color: white;
+}
+
+
+.Likes{/* いいねのハート */
+   position: relative;
+ }
+.Likes-Icon{
+   position: absolute;
+   left: -48px;
+   background: url("https://test-s333.s3-ap-northeast-1.amazonaws.com/media/web_heart_animation.png");
+   background-position: left;
+   background-size: 2900%;
+   background-repeat: no-repeat;
+   width: 105px;
+   height: 105px;
+ }
+
+@keyframes heartBlast {
+   0% {
+     background-position: left;
+   }
+   100% {
+     background-position: right;
+   }
+}
+
+.HeartAnimation {
+   display: inline-block;
+   background-position: right;
+   -webkit-animation-name: heartBlast;
+   animation-name: heartBlast;
+   -webkit-animation-duration: .8s;
+   animation-duration: .8s;
+   -webkit-animation-iteration-count: 1;
+   animation-iteration-count: 1;
+   -webkit-animation-timing-function: steps(28);
+   animation-timing-function: steps(28);
+}
+
+
+.btn-danger{/* メール登録ボタン */
+  max-width:100%;
+  width:300px;
+}
+
+.btn-outline-info{/* ソーシャルログインGoogleボタン */
+  max-width:100%;
+  width:300px;
+}
+
+.btn-info {/*ソーシャルログインTwitterボタン */
+  color: #fff;
+  background-color: #1DA1F2;
+  border-color: #1DA1F2;
+  max-width:100%;
+  width:300px;
+
+}
+.btn-info:hover {/*ソーシャルログインTwitterボタン */
+  color: #fff;
+  background-color: #1d8bf2;
+  border-color: #1d8bf2;
+}
+
+.btn-primary {/*ソーシャルログインFacebookボタン */
+  color: #fff;
+  background-color: #3B5998;
+  border-color: #3B5998;
+  max-width:100%;
+  width:300px;
+}
+.btn-primary:hover {/*ソーシャルログインFacebookボタン */
+  color: #fff;
+  background-color: #3b4a98;
+  border-color: #3b4a98;
+}
+
+.btn-secondary {/*ソーシャルログインGitHubボタン */
+  color: #fff;
+  background-color: #2B3137;
+  border-color: #2B3137;
+  max-width:100%;
+  width:300px;
+}
+
+.fa-twitter-square {/* ユーザー詳細ページのTwitterアイコン */
+  color: #1DA1F2;
+}
+
+.fa-instagram {/* ユーザー詳細ページのInstagramアイコン */
+  color: #CF2E92;
+}
+
+.input_size1{/* 入力フォームのサイズと位置(真ん中) */
+  max-width:100%;
+  width:300px;
+  text-align: center;
+  margin: 0 auto;
+}

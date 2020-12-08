@@ -33,3 +33,5 @@ show tables from データベース名;
 SHOW COLUMNS FROM テーブル名 FROM データベース名;
 
 http://localhost:8000
+
+docker-compose run python ./manage.py collectstatic
