@@ -8,14 +8,14 @@
 
         <div class="row w-100 w-sm-75 mx-auto">
 
-            <div class="col-4 col-sm-4 order-sm-0">
+            <div class="col-12 col-sm-4 order-sm-0">
                 <a class="navbar-brand" href="{% url 'register:top' %}">
                     <img src="https://test-s333.s3-ap-northeast-1.amazonaws.com/media/freelanzeicon.png" width="30" height="30" class="d-inline-block align-top" alt="">
                     Freelanze
                 </a>
             </div>
 
-            <div class="col-8 col-sm-8 order-sm-3">
+            <div class="col-12 col-sm-8 order-sm-3">
                 <div class="float-right pt-1">
                     {% if user.is_authenticated %}
                     <a class="btn btn-outline-primary" id="name11" href="{% url 'register:user_detail' user.pk %}" role="button"><font size="2">マイページ</font></a>
@@ -37,7 +37,7 @@
                 </form>
             </div>
 
-            <div class="col-5 col-sm-4 order-sm-2"><!--ドロップダウンボタン部分-->
+            <div class="col-6 col-sm-4 order-sm-2"><!--ドロップダウンボタン部分-->
                 <div class="btn-group pt-1">
                     <button type="button" class="btn btn-outline-dark dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <font size="2">スキルで絞り込む</font>
