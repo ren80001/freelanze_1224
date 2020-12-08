@@ -21,7 +21,7 @@ body{/* 背景色指定 */
 
 .button_text_size1{/* 会員登録ページ内の文字サイズ */
   font-size: small;
-  padding-top: 7px;
+  padding-top: 4px;
 }
 
 .button_text_size2{/* ログインページの登録、ログインボタンテキスト */
@@ -164,6 +164,13 @@ body{/* 背景色指定 */
 .fa-instagram {/* ユーザー詳細ページのInstagramアイコン */
   color: #CF2E92;
 }
+
+.input_size{/* 入力フォームのサイズと位置(真ん中) */
+  max-width:100%;
+  width:300px;
+}
+
+
 
 .input_size1{/* 入力フォームのサイズと位置(真ん中) */
   max-width:100%;
