@@ -1,7 +1,7 @@
 version : "3.4"
 services:
   db:
-    image: mariadb
+    image: mariadb:10.4.8
     restart: always
     command: mysqld --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci
     ports:
@@ -27,10 +27,11 @@ services:
       - db
 
   nginx:
-    image: nginx:1.13
+    image: nginx:1.19
     ports:
       - "8000:8000"
     volumes:
+      - ./log/nginx/:/var/log/nginx
       - ./nginx/conf:/etc/nginx/conf.d
       - ./nginx/uwsgi_params:/etc/nginx/uwsgi_params
       - ./static:/static

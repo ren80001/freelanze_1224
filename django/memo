@@ -35,3 +35,6 @@ SHOW COLUMNS FROM テーブル名 FROM データベース名;
 http://localhost:8000
 
 docker-compose run python ./manage.py collectstatic
+
+docker-compose run python ./manage.py makemigrations
+docker-compose run python ./manage.py migrate

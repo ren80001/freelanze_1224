@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'social_django',
     'django_cleanup',
+    'django_ses',
 ]
 
 MIDDLEWARE = [
@@ -143,13 +144,13 @@ LOGIN_REDIRECT_URL = 'register:top'
 LOGOUT_REDIRECT_URL = 'register:top'
 SOCIAL_AUTH_LOGIN_REDIRECT_URL = 'register:top' # リダイレクトURL
 
-EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+#EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 #EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
-EMAIL_HOST = 'smtp.googlemail.com'
-EMAIL_USE_TLS = True
-EMAIL_PORT = 587
-EMAIL_HOST_USER = 'ren80001@gmail.com'
-EMAIL_HOST_PASSWORD = '11261126ren'
+#EMAIL_HOST = 'smtp.googlemail.com'
+#EMAIL_USE_TLS = True
+#EMAIL_PORT = 587
+#EMAIL_HOST_USER = 'ren80001@gmail.com'
+#EMAIL_HOST_PASSWORD = '11261126ren'
 
 
 AUTHENTICATION_BACKENDS = (
@@ -172,3 +173,16 @@ SOCIAL_AUTH_FACEBOOK_KEY = '929180480821301'  # アプリID
 SOCIAL_AUTH_FACEBOOK_SECRET = '69c8b4630427b5d12c7e15b1cc9bdf8f'  # app secret
 SOCIAL_AUTH_GITHUB_KEY = '65a5923eefb1b4a90f25' # Client ID
 SOCIAL_AUTH_GITHUB_SECRET = 'fd7a614375c02cf30bb9aeb48f4385b9a9edb395' # Client Secret
+
+
+"""AWS設定軍"""
+
+"""IAM"""
+AWS_ACCESS_KEY_ID = ''
+AWS_SECRET_ACCESS_KEY = ''
+
+"""SES"""
+EMAIL_BACKEND = 'django_ses.SESBackend'  # バックエンドをSESに変更
+AWS_SES_REGION_NAME = 'ap-northeast-1'
+AWS_SES_REGION_ENDPOINT = 'email.ap-northeast-1.amazonaws.com'
+DEFAULT_FROM_EMAIL = SERVER_EMAIL = 'freelanze <@gmail.com>'
