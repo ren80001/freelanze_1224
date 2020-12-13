@@ -38,3 +38,7 @@ docker-compose run python ./manage.py collectstatic
 
 docker-compose run python ./manage.py makemigrations
 docker-compose run python ./manage.py migrate
+
+
+#滅びの呪文
+docker-compose down --rmi all --volumes

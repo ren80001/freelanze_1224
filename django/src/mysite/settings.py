@@ -137,8 +137,6 @@ STATIC_ROOT = '/static'
 #カスタムユーザーモデル読み込み
 AUTH_USER_MODEL = 'register.User'
 
-AUTH_USER_MODEL = 'register.User'
-
 LOGIN_URL = 'register:login'
 LOGIN_REDIRECT_URL = 'register:top'
 LOGOUT_REDIRECT_URL = 'register:top'
@@ -165,8 +163,8 @@ AUTHENTICATION_BACKENDS = (
 )
 
 
-SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = '592972296533-rgaupmj6f4mffvfjscqo61km9pcns362.apps.googleusercontent.com'  #Paste CLient Key
-SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = '7ml2imqjfczWtovocc6un3Zy' #Paste Secret Key
+SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = '592972296533-vg1f7sjrnhu40n253p4jbje1jt6n1ebp.apps.googleusercontent.com'  #Paste CLient Key
+SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = 'iIShZWJakh1iNz4WU6jWte0W' #Paste Secret Key
 SOCIAL_AUTH_TWITTER_KEY = '7Ws56Etw5bGZXXonPfRHHNMRw' #Consumer Key (API Key)
 SOCIAL_AUTH_TWITTER_SECRET = '1cRE2TuDSl43yrlOqWqOnZgbWSS96hzqjUhurWJgO6KKIovSjK' # Consumer Secret (API Secret)
 SOCIAL_AUTH_FACEBOOK_KEY = '929180480821301'  # アプリID
@@ -185,4 +183,4 @@ AWS_SECRET_ACCESS_KEY = ''
 EMAIL_BACKEND = 'django_ses.SESBackend'  # バックエンドをSESに変更
 AWS_SES_REGION_NAME = 'ap-northeast-1'
 AWS_SES_REGION_ENDPOINT = 'email.ap-northeast-1.amazonaws.com'
-DEFAULT_FROM_EMAIL = SERVER_EMAIL = 'freelanze <@gmail.com>'
+DEFAULT_FROM_EMAIL = SERVER_EMAIL = 'freelanze <ren80001@gmail.com>'
