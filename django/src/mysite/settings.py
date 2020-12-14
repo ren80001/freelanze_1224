@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'social_django',
     'django_cleanup',
     'django_ses',
+    'storages',
 ]
 
 MIDDLEWARE = [
@@ -131,8 +132,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
-STATIC_URL = '/static/'
-STATIC_ROOT = '/static'
+
 
 #カスタムユーザーモデル読み込み
 AUTH_USER_MODEL = 'register.User'
@@ -184,3 +184,24 @@ EMAIL_BACKEND = 'django_ses.SESBackend'  # バックエンドをSESに変更
 AWS_SES_REGION_NAME = 'ap-northeast-1'
 AWS_SES_REGION_ENDPOINT = 'email.ap-northeast-1.amazonaws.com'
 DEFAULT_FROM_EMAIL = SERVER_EMAIL = 'freelanze <ren80001@gmail.com>'
+
+"""S3"""
+AWS_STORAGE_BUCKET_NAME = 'aws-s3-freelanze'
+AWS_S3_CUSTOM_DOMAIN = '%s.s3.amazonaws.com' % AWS_STORAGE_BUCKET_NAME
+AWS_S3_OBJECT_PARAMETERS = {
+    'CacheControl': 'max-age=86400',
+}
+AWS_LOCATION = 'static'
+AWS_DEFAULT_ACL = None
+STATIC_URL = 'https://%s/%s/' % (AWS_S3_CUSTOM_DOMAIN, AWS_LOCATION)
+STATICFILES_DIRS = (
+    [
+        os.path.join(BASE_DIR, "static"),
+    ]
+)
+STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+
+
+MEDIA_URL = "https://%s/" % AWS_S3_CUSTOM_DOMAIN
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
