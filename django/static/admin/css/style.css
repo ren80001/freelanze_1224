@@ -178,3 +178,13 @@ body{/* 背景色指定 */
   text-align: center;
   margin: 0 auto;
 }
+
+
+/* パソコンで見たときは"pc"のclassがついたナビバーが表示される */
+.pc { display: block !important; }
+.sp { display: none !important; }
+
+/* スマートフォンで見たときは"sp"のclassがついたナビバーが表示される */
+@media only screen and (max-width: 750px) {
+    .pc { display: none !important; }
+    .sp { display: block !important; }
