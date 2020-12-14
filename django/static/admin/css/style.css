@@ -81,7 +81,7 @@ body{/* 背景色指定 */
 .Likes-Icon{
    position: absolute;
    left: -48px;
-   background: url("https://test-s333.s3-ap-northeast-1.amazonaws.com/media/web_heart_animation.png");
+   background: url("https://aws-s3-freelanze.s3-ap-northeast-1.amazonaws.com/media/web_heart_animation.png");
    background-position: left;
    background-size: 2900%;
    background-repeat: no-repeat;

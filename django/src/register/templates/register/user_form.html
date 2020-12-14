@@ -25,11 +25,11 @@
     <div class="row">
         <div class="col-1 col-md-2"></div><!--  コンテナサイズ調整用からコンテナ -->
         <div class="card col-10 col-md-8 h-25">
-            <div class="text-image" style="background: url(https://django-for-s3.s3-ap-northeast-1.amazonaws.com/static/media/background-image.png);">
+            <div class="text-image" style="background: url(https://aws-s3-freelanze.s3-ap-northeast-1.amazonaws.com/media/background-image.png);">
                 {% if user.top_image %}
                 <img class="detail_top_image my-3" src="{{ user.top_image.url }}">
                 {% else %}
-                <img class="detail_top_image my-3" src="https://test-s333.s3-ap-northeast-1.amazonaws.com/media/unknown_image.png"><!--デフォルトアンノーン画像表示 -->
+                <img class="detail_top_image my-3" src="https://aws-s3-freelanze.s3-ap-northeast-1.amazonaws.com/media/unknown_image.png"><!--デフォルトアンノーン画像表示 -->
                 {% endif %}
             </div>
             <div class="card-body">
@@ -85,7 +85,7 @@
         <div class="col-1 col-md-2"></div><!--  コンテナサイズ調整用からコンテナ -->
         <div class="col-10 col-md-8 h-25">
             <div class="text-center">
-                <h6 class="my-5">プロフィールを充実させて、<br>{{ user.nick_name }}さんを最大限アピールしましょう。</h6>
+                <h6 class="my-5">プロフィールを充実させて、<br>{{ user.username }}さんを最大限アピールしましょう。</h6>
             </div>
         </div>
         <div class="col-1 col-md-2"></div><!--  コンテナサイズ調整用からコンテナ -->

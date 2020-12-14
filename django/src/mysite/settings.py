@@ -132,23 +132,14 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
-
-
 #カスタムユーザーモデル読み込み
 AUTH_USER_MODEL = 'register.User'
+
 
 LOGIN_URL = 'register:login'
 LOGIN_REDIRECT_URL = 'register:top'
 LOGOUT_REDIRECT_URL = 'register:top'
 SOCIAL_AUTH_LOGIN_REDIRECT_URL = 'register:top' # リダイレクトURL
-
-#EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-#EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
-#EMAIL_HOST = 'smtp.googlemail.com'
-#EMAIL_USE_TLS = True
-#EMAIL_PORT = 587
-#EMAIL_HOST_USER = 'ren80001@gmail.com'
-#EMAIL_HOST_PASSWORD = '11261126ren'
 
 
 AUTHENTICATION_BACKENDS = (
@@ -176,14 +167,14 @@ SOCIAL_AUTH_GITHUB_SECRET = 'fd7a614375c02cf30bb9aeb48f4385b9a9edb395' # Client 
 """AWS設定軍"""
 
 """IAM"""
-AWS_ACCESS_KEY_ID = ''
-AWS_SECRET_ACCESS_KEY = ''
+AWS_ACCESS_KEY_ID = 'AKIAXDM23UHEXYZQHG46'
+AWS_SECRET_ACCESS_KEY = '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'
 
 """SES"""
 EMAIL_BACKEND = 'django_ses.SESBackend'  # バックエンドをSESに変更
 AWS_SES_REGION_NAME = 'ap-northeast-1'
 AWS_SES_REGION_ENDPOINT = 'email.ap-northeast-1.amazonaws.com'
-DEFAULT_FROM_EMAIL = SERVER_EMAIL = 'freelanze <ren80001@gmail.com>'
+DEFAULT_FROM_EMAIL = SERVER_EMAIL = 'freelanze <rentensyoku@gmail.com>'
 
 """S3"""
 AWS_STORAGE_BUCKET_NAME = 'aws-s3-freelanze'
