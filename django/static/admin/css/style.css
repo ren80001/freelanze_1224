@@ -165,6 +165,10 @@ body{/* 背景色指定 */
   color: #CF2E92;
 }
 
+.fa-heart{/* Topハートアイコン */
+ 　color: #e080a0;
+}
+
 .input_size{/* 入力フォームのサイズと位置(真ん中) */
   max-width:100%;
   width:300px;
