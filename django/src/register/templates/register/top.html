@@ -222,11 +222,11 @@
               <img class="card-img-top mt-3" src="https://aws-s3-freelanze.s3-ap-northeast-1.amazonaws.com/media/unknown_image.png"><!--デフォルトアンノーン画像表示 -->
               {% endif %}
               <div class="card-body">
-                  <h5 class="card-skill pd-0"><i class="fas fa-heart"></i>{{ product.like }}</h5>
-                  <h6 class="card-skill">{{ product.portfolio | slice:":130" }}…</h6>
+                  <h5 class="card-skill pd-0"><i class="fas fa-heart"></i> {{ product.like }}</h5>
                   <h6 class="card-skill">{{ product.username}}</h6>
                   <h6 class="card-skill pd-0">{{ product.get_skill_display }}</h6>
                   <p class="card-text pt-0">{{ product.get_request_fee_display }}</p>
+                  <h6 class="card-skill">{{ product.portfolio | slice:":130" }}…</h6>
               </div>
           </a>
       </div><!--表示カードデザインはここまで-->
