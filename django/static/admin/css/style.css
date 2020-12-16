@@ -17,6 +17,7 @@
 body{/* 背景色指定 */
   background-color:#f4f4f4;
   padding-top: 55px;
+  font-family: sans-serif;
 }
 
 .button_text_size1{/* 会員登録ページ内の文字サイズ */
