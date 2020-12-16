@@ -43,6 +43,7 @@
                         <label for="{{ form.username.label }}" class="pr_label">{{ form.username.label }}</label>
                         {% if user.username == "ゲストユーザー" %}
                         <h4>ゲストユーザー</h4>
+                        <div hidden class="input_size">{{ form.username }}</div>
                         <p><font color="red">※ゲストの為変更不可</font></p>
                         {% else %}
                         <div class="input_size">{{ form.username }}</div>
