@@ -41,7 +41,12 @@
                     </div>
                     <div class="form-group">
                         <label for="{{ form.username.label }}" class="pr_label">{{ form.username.label }}</label>
+                        {% if user.username == "ゲストユーザー" %}
+                        <h4>ゲストユーザー</h4>
+                        <p><font color="red">※ゲストの為変更不可</font></p>
+                        {% else %}
                         <div class="input_size">{{ form.username }}</div>
+                        {% endif %}
                     </div>
                     <div class="form-group">
                         <label for="{{ form.skill.label }}">{{ form.skill.label }}</label>
