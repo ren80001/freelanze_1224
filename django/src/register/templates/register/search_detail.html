@@ -152,7 +152,7 @@
               {% endif %}
               </div>
               <div class="card-body">
-                  <h6 class="card-skill">{{ product.username}}</h6>
+                  <h6 class="card-skill">{{ product.username | slice:"13" }}</h6>
                   <h6 class="card-skill">{{ product.get_skill_display }}</h6>
                   <p class="card-text">{{ product.get_request_fee_display }}</p>
               </div>
