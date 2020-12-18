@@ -24,7 +24,7 @@ SECRET_KEY = '9veo^crfmr2era$=vmh5lq9=%xc1qj@!vu59&zoq!r1_(2r*29'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['freelanze.tk']
+ALLOWED_HOSTS = ['freelanze.tk', '54.249.247.138']
 
 
 # Application definition
