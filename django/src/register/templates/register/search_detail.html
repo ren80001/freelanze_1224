@@ -144,7 +144,7 @@
       {% for product in user_list %}
       <div class="col-6 col-md-4 col-lg-3 mb-2">
           <a href="{% url 'register:user_profile' pk=product.id %}" class="card noline1" style="width: 100%;">
-              <div class="text-image" style="background: url(https://aws-s3-freelanze.s3-ap-northeast-1.amazonaws.com/media/background-image.png);">
+              <div class="text-image" style="background: url(https://aws-s3-freelanze.s3-ap-northeast-1.amazonaws.com/media/background-image-new.jpg);">
               {% if product.top_image %}
               <img class="card-img-top mt-3" src="{{ product.top_image.url }}">
               {% else %}
