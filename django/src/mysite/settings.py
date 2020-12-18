@@ -84,10 +84,10 @@ WSGI_APPLICATION = 'mysite.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'testdb',
-        'USER': 'maria',
-        'PASSWORD': '1126',
-        'HOST': 'db',
+        'NAME': 'userdata',
+        'USER': 'admin',
+        'PASSWORD': 'ren11261126',
+        'HOST': 'freelanze-db.czhr67wuwire.ap-northeast-1.rds.amazonaws.com',
         'PORT': '3306',
         'OPTIONS': {
             'charset': 'utf8mb4',
@@ -167,8 +167,8 @@ SOCIAL_AUTH_GITHUB_SECRET = 'fd7a614375c02cf30bb9aeb48f4385b9a9edb395' # Client 
 """AWS設定軍"""
 
 """IAM"""
-AWS_ACCESS_KEY_ID = ''
-AWS_SECRET_ACCESS_KEY = ''
+AWS_ACCESS_KEY_ID = 'AKIAXDM23UHE2JLZ2R6B'
+AWS_SECRET_ACCESS_KEY = '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'
 
 """SES"""
 EMAIL_BACKEND = 'django_ses.SESBackend'  # バックエンドをSESに変更
