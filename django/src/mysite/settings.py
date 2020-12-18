@@ -87,7 +87,7 @@ DATABASES = {
         'NAME': 'userdata',
         'USER': 'admin',
         'PASSWORD': 'ren11261126',
-        'HOST': 'freelanze-db.czhr67wuwire.ap-northeast-1.rds.amazonaws.com',
+        'HOST': 'freelanze-db-1.czhr67wuwire.ap-northeast-1.rds.amazonaws.com',
         'PORT': '3306',
         'OPTIONS': {
             'charset': 'utf8mb4',
