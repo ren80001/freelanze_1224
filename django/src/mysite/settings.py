@@ -19,7 +19,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '9veo^crfmr2era$=vmh5lq9=%xc1qj@!vu59&zoq!r1_(2r*29'
+SECRET_KEY = ''
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
@@ -84,10 +84,10 @@ WSGI_APPLICATION = 'mysite.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'userdata',
-        'USER': 'admin',
-        'PASSWORD': 'ren11261126',
-        'HOST': 'freelanze-db.czhr67wuwire.ap-northeast-1.rds.amazonaws.com',
+        'NAME': '',
+        'USER': '',
+        'PASSWORD': '',
+        'HOST': '.czhr67wuwire.ap-northeast-1.rds.amazonaws.com',
         'PORT': '3306',
         'OPTIONS': {
             'charset': 'utf8mb4',
@@ -155,27 +155,27 @@ AUTHENTICATION_BACKENDS = (
 )
 
 
-SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = '592972296533-vg1f7sjrnhu40n253p4jbje1jt6n1ebp.apps.googleusercontent.com'  #Paste CLient Key
-SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = 'iIShZWJakh1iNz4WU6jWte0W' #Paste Secret Key
-SOCIAL_AUTH_TWITTER_KEY = '7Ws56Etw5bGZXXonPfRHHNMRw' #Consumer Key (API Key)
-SOCIAL_AUTH_TWITTER_SECRET = '1cRE2TuDSl43yrlOqWqOnZgbWSS96hzqjUhurWJgO6KKIovSjK' # Consumer Secret (API Secret)
-SOCIAL_AUTH_FACEBOOK_KEY = '929180480821301'  # アプリID
-SOCIAL_AUTH_FACEBOOK_SECRET = '69c8b4630427b5d12c7e15b1cc9bdf8f'  # app secret
-SOCIAL_AUTH_GITHUB_KEY = '65a5923eefb1b4a90f25' # Client ID
-SOCIAL_AUTH_GITHUB_SECRET = 'fd7a614375c02cf30bb9aeb48f4385b9a9edb395' # Client Secret
+SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = ''  #Paste CLient Key
+SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = '' #Paste Secret Key
+SOCIAL_AUTH_TWITTER_KEY = '' #Consumer Key (API Key)
+SOCIAL_AUTH_TWITTER_SECRET = '' # Consumer Secret (API Secret)
+SOCIAL_AUTH_FACEBOOK_KEY = ''  # アプリID
+SOCIAL_AUTH_FACEBOOK_SECRET = ''  # app secret
+SOCIAL_AUTH_GITHUB_KEY = '' # Client ID
+SOCIAL_AUTH_GITHUB_SECRET = '' # Client Secret
 
 
 """AWS設定軍"""
 
 """IAM"""
-AWS_ACCESS_KEY_ID = 'AKIAXDM23UHE2JLZ2R6B'
-AWS_SECRET_ACCESS_KEY = '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'
+AWS_ACCESS_KEY_ID = ''
+AWS_SECRET_ACCESS_KEY = ''
 
 """SES"""
 EMAIL_BACKEND = 'django_ses.SESBackend'  # バックエンドをSESに変更
 AWS_SES_REGION_NAME = 'ap-northeast-1'
 AWS_SES_REGION_ENDPOINT = 'email.ap-northeast-1.amazonaws.com'
-DEFAULT_FROM_EMAIL = SERVER_EMAIL = 'freelanze <rentensyoku@gmail.com>'
+DEFAULT_FROM_EMAIL = SERVER_EMAIL = 'freelanze <@gmail.com>'
 
 """S3"""
 AWS_STORAGE_BUCKET_NAME = 'aws-s3-freelanze'
