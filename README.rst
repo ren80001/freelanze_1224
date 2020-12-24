@@ -1,6 +1,6 @@
 ■使用技術
 ----------
-:AWS/ EC2, S3, RDS, Route53, SES, IAM, VPC
+・AWS/ EC2, S3, RDS, Route53, SES, IAM, VPC
 
 ・言語/ Python3.7, HTML, css, javascript
 
