@@ -1,8 +1,11 @@
 ■使用技術
 ----------
 ・AWS/ EC2, S3, RDS, Route53, SES, IAM, VPC
+
 ・言語/ Python3.7, HTML, css, javascript
+
 ・フレームワーク/Django3.1, bootstrap4
+
 ・API/Twitter, Github
 
 
