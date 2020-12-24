@@ -1,6 +1,6 @@
 ■使用技術
 ----------
-・AWS/ EC2, S3, RDS, Route53, SES, IAM, VPC
+:AWS/ EC2, S3, RDS, Route53, SES, IAM, VPC
 
 ・言語/ Python3.7, HTML, css, javascript
 
@@ -12,32 +12,49 @@
 ■開発環境
 ----------
 ・OS/ Mac OS, Windows8
+
 ・pycharm2.2
+
 ・docker, docker-compose,
+
 ・Nginx
+
 ・MariaDB10.4(RDS)
+
 ・Github
 
 
 ■サイト機能
 ----------
 ・レスポンシブルデザイン
+
 ・検索機能(スキル、ワード検索)
+
 ・イイネ機能
+
 ・画像投稿、削除機能
+
 ・プロフィール投稿、編集機能
+
 ・会員登録機能(email, google, twitter, github)
+
 ・ログイン機能(email, google, twitter, github)
+
 ・ログアウト機能
+
 ・メール自動送信機能
+
 ・パスワード変更機能
 
 
 ■現在の取り組み
 ----------
 ・プライマリーキーのUUid化
+
 ・いいね機能改良
+
 ・コメント機能の追加
+
 ・テストコード作成
 
 
